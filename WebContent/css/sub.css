@@ -1,0 +1,63 @@
+/*로그인*/
+.login_box {width: 50%; height:80%; display:flex; justify-content: center; align-items: center; flex-direction: column;}
+.login_box .login_area {width: 70%; height: 60%; display:flex; justify-content: center; align-items: center; flex-direction: column;}
+.login_box .login_area input {margin: 3% 0%; width:350px; height:35px; display: block;}
+.login_box .login_area .login_btn {margin-top: 7%; height: 40px;}
+.login_box .login_area .login_btn input {width: 100%; height: 40px; font-size: 17px; border:none; color: #fff; background: #e4007f;}
+.login_box .btn_area {width: 70%; height: 15%;}
+
+/*회원가입*/
+.signup_box {width: 85%; height:90%; display:flex; justify-content: center; align-items: center; flex-direction: column;}
+.signup_box .signup_tb_box {width: 100%; height:100%;  display:flex; justify-content: center; align-items: center; flex-direction: column;}
+.signup_box .signup_tb_box .signup_tb {border-spacing: 30px 25px; width: 100%;}
+.signup_box .signup_tb_box .btn_area {margin-top: 10%;}
+.signup_box .signup_tb_box .signup_tb label {font-size: 25px;}
+.signup_box .signup_tb_box .signup_tb td {text-align: left;}
+.signup_box .signup_tb_box .signup_tb input {width: 100px; height: 25px;}
+.signup_box .signup_tb_box .signup_tb .input_box {width: 150px; height: 25px;}
+.signup_box .signup_tb_box .signup_tb .input_btn {width: 70px; height: 31px; border: none; background: gray; color: #fff;}
+.signup_box .signup_tb_box .signup_tb .tel {width: 50px; height: 25px;}
+.signup_box .signup_tb_box .signup_tb select {height: 31px;}
+.signup_box .signup_tb_box .signup_tb p {width :200px; height:15px; display:inline-block; color:red; margin:0 1%;}
+.signup_box .signup_tb_box .btn_area input {width: 17%; margin:0 2%; height: 40px; border:none; font-size: 17px; color: #fff; background: #e4007f;}
+
+/*notice 목록*/
+.notice_list {border-top: 1px solid #33383E; border-collapse: collapse; border-spacing: 0; width: 80%; table-layout: fixed;}
+.notice_list tr {height:45px;}
+.notice_list th {border-bottom: 1px solid #33383E}
+.notice_list td{border-bottom: 1px solid #e0e0e0;}
+.notice_list .num {width: 5%;}
+.notice_list .title {text-align: left; padding-left: 10px;}
+.notice_list .reg {width: 10%;}
+.notice_list .name {width: 10%;}
+.notice_list .view {width: 5%;}
+
+.paging {width: 50%; height:5%; margin-top: 50px;}
+.paging a {display:inline-block; width:35px; height:35px; font-size:17px; vertical-align: top; color: #747474; border: 1px solid #e0e0e0; line-height:2.5;}
+.paging .prev {margin-right: 20px;}
+.paging .next {margin-left: 20px;}
+
+.board_btn_area {display: inline-block; width:80%; text-align: right; margin-top: 30px;}
+.board_btn_area a {display:inline-block; width:auto; padding:7px 25px 3px; vertical-align: top; border: 1px solid #d0d0d0;}
+.board_btn_area button {display:inline-block; width:auto; padding:7px 25px 3px; vertical-align: top; border: 1px solid #d0d0d0;}
+
+/*notice 글쓰기*/
+.notice_write {border-top: 1px solid #33383E;border-collapse: collapse; border-spacing: 0; width: 80%; table-layout: fixed; display: inline-table;}
+.notice_write input[type=text] {height:34px; border:1px solid #e0e0e0;}
+.notice_write thead {display:none;}
+.notice_write tbody tr {height:45px; border-bottom: 1px solid #e0e0e0;}
+.notice_write tbody tr:last-child {border-bottom: 1px solid #33383E; height:300px;}
+.notice_write tbody tr td:first-child {width:20%; background-color: #f4f6f9;}
+.notice_write tbody tr td:last-child {text-align: left; padding-left: 10px;}
+.notice_write #dataState {width:80px; height:34px; border: 1px solid #e0e0e0;}
+.notice_write #dataTitle {width:80%;}
+.notice_write #dataContent {width:80%; height:270px; border:1px solid #e0e0e0;}
+
+/*notice 상세보기*/
+.notice_detail {border-top: 1px solid #33383E;border-collapse: collapse; border-spacing: 0; width: 80%; table-layout: fixed; display: inline-table;}
+.notice_detail thead {display:none;}
+.notice_detail tbody tr {height:45px; border-bottom: 1px solid #e0e0e0;}
+.notice_detail tbody tr:last-child {border-bottom: 1px solid #33383E; height:300px;}
+.notice_detail tbody tr td:first-child {width:20%; background-color: #f4f6f9;}
+.notice_detail tbody tr td:last-child {text-align: left; padding-left: 10px;}
+.notice_detail #dataContent {width:80%; height:270px; border:1px solid #e0e0e0;}

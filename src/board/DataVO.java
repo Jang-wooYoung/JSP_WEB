@@ -3,23 +3,23 @@ package board;
 import java.util.Date;
 
 public class DataVO {
-	private String dataUid;			//게시글고유값
-	private String boardUid;		//게시판고유값
-	private String dataTitle;		//게시글 제목
-	private String dataContent;		//게시글 내용
-	private int dataState;			//게시글 상태 0:일반 1:삭제 2:차단 3:공지
-	private int dataIdx;			//게시글 번호
-	private String userId;			//게시글 작성자 아이디
-	private String userName;		//게시글 작성자 이름
-	private String userNickname;	//게시글 작성자 닉네임
-	private Date register_dt;		//게시글 작성일자
-	private Date modify_dt;			//게시글 수정일자
-	private int viewCount;			//게시글 조회수
-	private String tmpField1;		//임시필드1
-	private String tmpField2;		//임시필드2
-	private String tmpField3;		//임시필드3
-	private String tmpField4;		//임시필드4
-	private String tmpField5;		//임시필드5
+	private String dataUid = "";		//게시글고유값
+	private String boardUid = "";		//게시판고유값
+	private String dataTitle = "";		//게시글 제목
+	private String dataContent = "";	//게시글 내용
+	private int dataState;				//게시글 상태 0:일반 1:삭제 2:차단 3:공지
+	private int dataIdx;				//게시글 번호
+	private String userId = "";			//게시글 작성자 아이디
+	private String userName = "";		//게시글 작성자 이름
+	private String userNickname = "";	//게시글 작성자 닉네임
+	private Date register_dt;			//게시글 작성일자
+	private Date modify_dt;				//게시글 수정일자
+	private int viewCount;				//게시글 조회수
+	private String tmpField1 = "";		//임시필드1
+	private String tmpField2 = "";		//임시필드2
+	private String tmpField3 = "";		//임시필드3
+	private String tmpField4 = "";		//임시필드4
+	private String tmpField5 = "";		//임시필드5
 	
 	public String getDataUid() {
 		return dataUid;

@@ -34,6 +34,7 @@
 
 .paging {width: 50%; height:5%; margin-top: 50px;}
 .paging a {display:inline-block; width:35px; height:35px; font-size:17px; vertical-align: top; color: #747474; border: 1px solid #e0e0e0; line-height:2.5;}
+.paging .active {color: #fff; background: #0094f2;}
 .paging .prev {margin-right: 20px;}
 .paging .next {margin-left: 20px;}
 

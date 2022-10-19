@@ -13,7 +13,13 @@ public class UserService {
 	
 	DBConnection dbcon = new DBConnection();
 	
-	public String userWrite(UserVO userVO) throws SQLException { //사용자 등록
+	/**
+	 * 회원정보를 DB에 등록한다.
+	 * @param userVO 사용자정보
+	 * @return 성공실패여부 메시지 반환
+	 * @throws SQLException
+	 */
+	public String userWrite(UserVO userVO) throws SQLException {
 		
 		String result_Msg = "";
 		
@@ -65,8 +71,16 @@ public class UserService {
 		
 		return result_Msg;
 	}
-		
-	public UserVO userLogin(String userId, String userPassword) throws SQLException { //사용자 로그인
+	
+	
+	/**
+	 * 사용자 로그인 처리
+	 * @param userId 사용자 아이디
+	 * @param userPassword 사용자 패스워드
+	 * @return 사용자 정보반환
+	 * @throws SQLException
+	 */
+	public UserVO userLogin(String userId, String userPassword) throws SQLException {
 		
 		UserVO userVO = new UserVO();
 		DES des3 = new DES();
@@ -125,7 +139,14 @@ public class UserService {
 		return userVO;
 	}
 	
-	public UserVO getUser(String userUid) throws SQLException { //사용자 정보
+	
+	/**
+	 * 사용자 정보를 받아온다
+	 * @param userUid 사용자 고유값
+	 * @return 사용자 정보반환
+	 * @throws SQLException
+	 */
+	public UserVO getUser(String userUid) throws SQLException {
 		
 		UserVO userVO = new UserVO();
 		DES des3 = new DES();
@@ -183,8 +204,13 @@ public class UserService {
 		return userVO;
 	}
 	
-	
-	public String userUpdate(UserVO userVO) throws SQLException { //사용자 수정
+	/**
+	 * 사용자 정보를 수정한다.
+	 * @param userVO 사용자 정보
+	 * @return 사용자 정보 성공실패여부 반환
+	 * @throws SQLException
+	 */
+	public String userUpdate(UserVO userVO) throws SQLException {
 		String result_Msg = "";		
 		long tmpdate = userVO.getModify_dt().getTime();			
 		Timestamp date = new Timestamp(tmpdate);
@@ -230,8 +256,13 @@ public class UserService {
 		return result_Msg;
 	}
 	
-	
-	public String userDelete(UserVO userVO) throws SQLException { //사용자 삭제
+	/**
+	 * 사용자 상태를 삭제상태로 수정한다.
+	 * @param userVO 사용자 정보
+	 * @return 상태변경여부 메시지 반환
+	 * @throws SQLException
+	 */
+	public String userDelete(UserVO userVO) throws SQLException {
 		String result_Msg = "";		
 		long tmpdate = userVO.getModify_dt().getTime();			
 		Timestamp date = new Timestamp(tmpdate);

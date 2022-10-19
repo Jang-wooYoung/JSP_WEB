@@ -11,7 +11,7 @@ public class DBConnection {
 		
 		String url = "jdbc:mysql://localhost:3306/jsp_web?characterEncoding=UTF-8";
 		String id = "root";
-		String pw = "3354!@ASDF";
+		String pw = "jspweb";
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");

@@ -31,10 +31,7 @@
 					</div>
 					<div class="menu">
 						<a href="<%=contextPath%>/board/notice_list.jsp">Notice</a>
-					</div>
-					<div class="menu">
-						<a href="#">Calendar</a>
-					</div>
+					</div>					
 				</div><!-- *menubox -->
 				
 				<div class="tool_box">

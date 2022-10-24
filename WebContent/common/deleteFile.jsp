@@ -30,9 +30,9 @@
 	deletecount = fileService.deleteFile(fileUid);
 	
 	if(deletecount > 0) {
-		resultMsg = "첨부파이 삭제에 성공하였습니다.";		
+		resultMsg = "첨부파일 삭제에 성공하였습니다.";		
 	}else {
-		resultMsg = "첨부파이 삭제에 실패하였습니다.";		
+		resultMsg = "첨부파일 삭제에 실패하였습니다.";		
 	}
 	%>
 		<script type="text/javascript">

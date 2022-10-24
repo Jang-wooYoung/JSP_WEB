@@ -93,10 +93,21 @@
 				<div class="board_btn_area">
 					<%if( isManager || (loginUser != null && loginUser.getUserId().equals(dataVO.getUserId())) ) {%>
 					<a href="<%=contextPath%>/board/notice_write.jsp?mode=update&amp;dataUid=<%=dataUid %>&amp;<%=paramOption%>">수정</a>
-					<a href="#">삭제</a>
+					<a href="#" onclick="deleteData('<%=dataVO.getBoardUid()%>', '<%=dataVO.getDataUid()%>');">삭제</a>
 					<%} %>
 					<a href="<%=contextPath%>/board/notice_list.jsp?&amp;<%=paramOption%>">목록</a>
 				</div><!-- *board_btn_area -->
 			</div><!-- *content -->
+			
+			<script type="text/javascript">
+				function deleteData(boardUid, dataUid) {
+					if(confirm('삭제하시겠습니까?')) {
+						location.href = "<%=contextPath%>/common/deleteData.jsp?mode=delete&boardUid="+boardUid+"&dataUid="+dataUid+"";
+						return true;
+					}else {
+						return false;
+					}
+				}
+			</script>
 			
 <%@include file="/layout/bottom_layout.jsp" %>

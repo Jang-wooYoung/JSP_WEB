@@ -116,8 +116,6 @@
 			return;
 		}
 		
-	}else if("delete".equals(mode)) { //게시글삭제
-		
 	}else {
 		%>
 			<script type="text/javascript">

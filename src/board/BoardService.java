@@ -153,6 +153,44 @@ public class BoardService {
 		return updatecount;
 	}
 	
+	public int DataDelete(DataVO dataVO) throws SQLException {
+		int deletecount = 0;
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			
+			long tmpdate = dataVO.getModify_dt().getTime();			
+			Timestamp date = new Timestamp(tmpdate);
+			
+			String query = "";
+			query += "UPDATE board_data_tb SET DATA_STATE = ?, MODIFY_DT = ?";
+			query += " WHERE DATA_UID = ?";
+			
+			conn = dbcon.getConnection();
+			pstmt = conn.prepareStatement(query);
+			
+			pstmt.setInt(1, dataVO.getDataState());						
+			pstmt.setTimestamp(2, date);
+			pstmt.setString(3, dataVO.getDataUid());
+			
+			deletecount = pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+			
+		}catch(Exception e) {
+			System.out.println("======== BoardService DataDelete DB UPDATE error START ========");
+			e.printStackTrace();
+		}finally {
+			if(pstmt != null) pstmt.close();
+			if(conn != null) conn.close();
+		}
+		
+		return deletecount;
+	}
+	
 	/**
 	 * 해당 게시판의 게시물 리스트를 출력한다.
 	 * @param boardUid 게시판고유값

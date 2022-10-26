@@ -3,22 +3,22 @@ package user;
 import java.util.Date;
 
 public class UserVO {
-	private String userUid;			//사용자 고유값
-	private String userId;			//사용자 아이디
-	private String userPassword;	//사용자 패스워드
-	private String userName;		//사용자 이름
-	private String userNickname;	//사용자 별명
-	private String userPhone;		//사용자 연락처 000-0000-0000
-	private String userEmail;		//사용자 이메일 sample@sample.com
-	private String usertmpField1;	//사용자 임시필드1
-	private String usertmpField2;	//사용자 임시필드2
-	private String usertmpField3;	//사용자 임시필드3
-	private String usertmpField4;	//사용자 임시필드4
-	private String usertmpField5;	//사용자 임시필드5
-	private int userLevel;			//사용자 레벨 1~9
-	private int userState;			//사용자 상태 0:정상 1:삭제 2: 차단
-	private Date register_dt;		//사용자 등록일
-	private Date modify_dt;			//사용자 수정일
+	private String userUid;				//사용자 고유값
+	private String userId;				//사용자 아이디
+	private String userPassword;		//사용자 패스워드
+	private String userName;			//사용자 이름
+	private String userNickname;		//사용자 별명
+	private String userPhone;			//사용자 연락처 000-0000-0000
+	private String userEmail;			//사용자 이메일 sample@sample.com
+	private String usertmpField1;		//사용자 임시필드1
+	private String usertmpField2;		//사용자 임시필드2
+	private String usertmpField3;		//사용자 임시필드3
+	private String usertmpField4;		//사용자 임시필드4
+	private String usertmpField5;		//사용자 임시필드5
+	private int userLevel;				//사용자 레벨 1~9
+	private int userState;				//사용자 상태 0:정상 1:삭제 2: 차단
+	private Date register_dt;			//사용자 등록일
+	private Date modify_dt;				//사용자 수정일
 	
 	public String getUserUid() {
 		return userUid;

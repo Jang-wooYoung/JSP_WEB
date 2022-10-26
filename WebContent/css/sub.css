@@ -4,7 +4,7 @@
 .login_box .login_area input {margin: 3% 0%; width:350px; height:35px; display: block;}
 .login_box .login_area .login_btn {margin-top: 7%; height: 40px;}
 .login_box .login_area .login_btn input {width: 100%; height: 40px; font-size: 17px; border:none; color: #fff; background: #e4007f;}
-.login_box .btn_area {width: 70%; height: 15%;}
+.login_box .btn_area {width: 70%; height: 15%; margin-top:30px;}
 
 /*회원가입*/
 .signup_box {width: 85%; height:90%; display:flex; justify-content: center; align-items: center; flex-direction: column;}
@@ -55,10 +55,20 @@
 .notice_write #dataContent {width:80%; height:270px; border:1px solid #e0e0e0;}
 
 /*notice 상세보기*/
-.notice_detail {border-top: 1px solid #33383E;border-collapse: collapse; border-spacing: 0; width: 80%; table-layout: fixed; display: inline-table;}
+.notice_detail {border-top: 1px solid #33383E;border-collapse: collapse; border-spacing: 0; width: 80%; table-layout: fixed; display: inline-table; margin-top:30px;}
 .notice_detail thead {display:none;}
 .notice_detail tbody tr {height:45px; border-bottom: 1px solid #e0e0e0;}
 .notice_detail tbody tr:last-child {border-bottom: 1px solid #33383E; height:300px;}
 .notice_detail tbody tr td:first-child {width:20%; background-color: #f4f6f9;}
 .notice_detail tbody tr td:last-child {text-align: left; padding-left: 10px;}
 .notice_detail #dataContent {width:80%; height:270px; border:1px solid #e0e0e0;}
+
+/*comment 영역*/
+.comment_area {display: inline-block; width:80%; text-align:center; margin-top: 30px;}
+.comment_area #commentContent {width:80%; height:70px; border:1px solid #e0e0e0;}
+.comment_area button {display:inline-block; width:auto; height:76px; padding:2px 25px 3px; vertical-align: top; border: 1px solid #d0d0d0;}
+.comment_table {border-top: 1px solid #33383E;border-collapse: collapse; border-spacing: 0; width: 100%; table-layout: fixed; display: inline-table; margin: 30px 0px;}
+.comment_table thead {display:none;}
+.comment_table tbody tr {height: 70px;}
+.comment_table tbody .comment_item td:first-child {width:20%; background-color: #f4f6f9;}
+.comment_table tbody .comment_item td:last-child {text-align: left; padding-left: 10px;}

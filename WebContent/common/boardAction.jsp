@@ -82,7 +82,7 @@
 		dataVO.setUserName(userName);
 		dataVO.setUserNickname(userNickname);
 		dataVO.setRegister_dt(new Date());
-		dataVO.setDataState(0);
+		dataVO.setDataState(Integer.parseInt(dataState));
 		dataVO.setViewCount(0);
 		
 		writecount = boardService.DataWrite(dataVO);
@@ -103,6 +103,7 @@
 		dataVO.setDataTitle(dataTitle);
 		dataVO.setDataContent(dataContent.replaceAll("\r\n", "<br />"));		
 		dataVO.setModify_dt((new Date()));		
+		dataVO.setDataState(Integer.parseInt(dataState));
 		
 		updatecount = boardService.DataUpdate(dataVO);
 		

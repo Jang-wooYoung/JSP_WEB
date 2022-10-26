@@ -126,7 +126,7 @@ public class BoardService {
 			Timestamp date = new Timestamp(tmpdate);
 			
 			String query = "";
-			query += "UPDATE board_data_tb SET DATA_TITLE = ?, DATA_CONTENT = ?, MODIFY_DT = ?";
+			query += "UPDATE board_data_tb SET DATA_TITLE = ?, DATA_CONTENT = ?, MODIFY_DT = ?, DATA_STATE = ?";
 			query += " WHERE DATA_UID = ?";
 			
 			conn = dbcon.getConnection();
@@ -135,7 +135,8 @@ public class BoardService {
 			pstmt.setString(1, dataVO.getDataTitle());
 			pstmt.setString(2, dataVO.getDataContent());			
 			pstmt.setTimestamp(3, date);
-			pstmt.setString(4, dataVO.getDataUid());
+			pstmt.setInt(4, dataVO.getDataState());
+			pstmt.setString(5, dataVO.getDataUid());
 			
 			updatecount = pstmt.executeUpdate();
 			
@@ -153,6 +154,12 @@ public class BoardService {
 		return updatecount;
 	}
 	
+	/**
+	 * 게시물 삭제처리
+	 * @param dataVO 데이터 정보
+	 * @return 게시물 삭제 갯수
+	 * @throws SQLException
+	 */
 	public int DataDelete(DataVO dataVO) throws SQLException {
 		int deletecount = 0;
 		
@@ -189,6 +196,42 @@ public class BoardService {
 		}
 		
 		return deletecount;
+	}
+		
+	/**
+	 * 게시글의 조회수를 증가시킨다
+	 * @param dataUid 게시글 고유값
+	 * @throws SQLException
+	 */
+	public void UpViewCount(String dataUid) throws SQLException {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			
+			String query = "";
+			query += "UPDATE board_data_tb SET VIEW_COUNT = VIEW_COUNT + 1";
+			query += " WHERE DATA_UID = ?";
+			
+			conn = dbcon.getConnection();
+			pstmt = conn.prepareStatement(query);
+			
+			pstmt.setString(1, dataUid);
+			
+			pstmt.executeUpdate();
+			
+			pstmt.close();
+			conn.close();
+			
+		}catch(Exception e) {
+			System.out.println("======== BoardService UpViewCount DB UPDATE error START ========");
+			e.printStackTrace();
+		}finally {
+			if(pstmt != null) pstmt.close();
+			if(conn != null) conn.close();
+		}
+		
 	}
 	
 	/**

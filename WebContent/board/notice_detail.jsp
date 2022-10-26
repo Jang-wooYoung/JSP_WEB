@@ -44,6 +44,7 @@
 	FileService fileService = new FileService();
 	
 	DataVO dataVO = boardService.getData(dataUid);
+	boardService.UpViewCount(dataUid);
 	List<FileVO> attachFileList = fileService.getAttachFileLsit(dataUid, 0);
 %>			
 			<div id="content" style="flex-direction: column;">
@@ -97,6 +98,47 @@
 					<%} %>
 					<a href="<%=contextPath%>/board/notice_list.jsp?&amp;<%=paramOption%>">목록</a>
 				</div><!-- *board_btn_area -->
+				
+				<div class="comment_area">
+					<%if(loginUser != null) {%>
+					<div class="comment_write">
+					
+						<form method="POST" id="commentVO" name="commentVO" action="" onsubmit="return commentFormChk(this);">
+							
+							<input type="hidden" id="boardUid" name="boardUid" value="<%=boardUid %>" />
+							<input type="hidden" id="dataUid" name="dataUid" value="<%=dataVO.getDataUid()%>" />
+							<input type="hidden" id="userId" name="userId" value="<%=loginUser.getUserId() %>" />
+							<input type="hidden" id="userName" name="userName" value="<%=loginUser.getUserName() %>" />
+							<input type="hidden" id="userNickname" name="userNickname" value="<%=loginUser.getUserNickname() %>" />
+							
+							<textarea id="commentContent" name="commentContent"></textarea>
+							<button type="submit">댓글작성</button>
+						</form>						
+						
+					</div><!-- *comment_write -->
+					<%} %>
+					
+					<div class="comment_list">
+						<table class="comment_table">
+							<thead>
+								<tr>
+									<th>정보</th>
+									<th>내용</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="comment_item">
+									<td>이름<br />2022-10-26 14:53:14</td>
+									<td>내용</td>
+								</tr>
+								<tr>
+									<td colspan="2">등록된 댓글이 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div><!-- *comment_list -->
+				</div><!-- *comment_area -->
+				
 			</div><!-- *content -->
 			
 			<script type="text/javascript">

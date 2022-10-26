@@ -94,9 +94,9 @@
 								<td>글상태</td>
 								<td>
 									<select id="dataState" name="dataState">
-										<option value="0">일반</option>									
-										<option value="2">차단</option>
-										<option value="3">공지</option>
+										<option value="0" <%if(dataVO.getDataState() == 0) {%>selected="selected"<%} %>>일반</option>									
+										<option value="2" <%if(dataVO.getDataState() == 2) {%>selected="selected"<%} %>>차단</option>
+										<option value="3" <%if(dataVO.getDataState() == 3) {%>selected="selected"<%} %>>공지</option>
 									</select>
 								</td>
 							</tr>

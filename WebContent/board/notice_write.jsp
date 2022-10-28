@@ -27,7 +27,7 @@
 	if(request.getParameter("rowCount") != null) rowCount = Integer.valueOf(request.getParameter("rowCount"));
 	if(request.getParameter("page") != null) currentPage = Integer.valueOf(request.getParameter("page"));
 	
-	if(loginUser == null || "".equals(mode)) {
+	if(loginUser == null || "".equals(loginUser.getUserId()) || "".equals(mode)) {
 		errorFlag = true;
 	}
 	

@@ -66,9 +66,10 @@
 /*comment 영역*/
 .comment_area {display: inline-block; width:80%; text-align:center; margin-top: 30px;}
 .comment_area #commentContent {width:80%; height:70px; border:1px solid #e0e0e0;}
-.comment_area button {display:inline-block; width:auto; height:76px; padding:2px 25px 3px; vertical-align: top; border: 1px solid #d0d0d0;}
+.comment_area button[type=submit] {display:inline-block; width:auto; height:76px; padding:2px 25px 3px; vertical-align: top; border: 1px solid #d0d0d0;}
+.comment_area a {border-radius: 6px; display:inline-block; width:auto; padding:5px 9px 1px; vertical-align: top; border: 1px solid #dcdcdc; color:#666; background-color:#fff;}
 .comment_table {border-top: 1px solid #33383E;border-collapse: collapse; border-spacing: 0; width: 100%; table-layout: fixed; display: inline-table; margin: 30px 0px;}
 .comment_table thead {display:none;}
-.comment_table tbody tr {height: 70px;}
+.comment_table tbody tr {height: 70px; border-bottom: 1px solid #e0e0e0;}
 .comment_table tbody .comment_item td:first-child {width:20%; background-color: #f4f6f9;}
 .comment_table tbody .comment_item td:last-child {text-align: left; padding-left: 10px;}

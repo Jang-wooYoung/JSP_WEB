@@ -151,7 +151,12 @@
 	});
 	
 	$(".delete").on("click", function() { //탈퇴버튼
-		location.href = "<%=contextPath%>/common/userAction.jsp?mode=delete";
+		if(confirm('탈퇴를 진행하시겠습니까?')) {
+			location.href = "<%=contextPath%>/common/userAction.jsp?mode=delete";
+		}else {
+			return false;
+		}
+		
 	});
 	
 	<%}%>

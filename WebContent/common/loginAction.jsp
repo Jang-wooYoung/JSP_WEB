@@ -8,7 +8,7 @@
 	
 	UserVO loginUser = (UserVO)session.getAttribute("loginUser");	
 
-	if(loginUser != null ) {
+	if(loginUser != null && !"".equals(loginUser.getUserId()) ) {
 		%>
 			<script type="text/javascript">
 				alert('현재 로그인 중입니다.');

@@ -79,7 +79,7 @@
 		
 		UserVO userVO = null;
 		
-		if(loginUser != null) {			
+		if(loginUser != null && !"".equals(loginUser.getUserId())) {			
 			userVO = userService.getUser(loginUser.getUserUid());
 		}
 		
@@ -117,7 +117,7 @@
 		
 		UserVO userVO = null;
 		
-		if(loginUser != null) {			
+		if(loginUser != null && !"".equals(loginUser.getUserId())) {			
 			userVO = userService.getUser(loginUser.getUserUid());
 		}
 		

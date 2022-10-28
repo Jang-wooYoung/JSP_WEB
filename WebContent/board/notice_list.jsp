@@ -132,7 +132,7 @@
 				</div><!-- *pagination -->
 				
 				<div class="board_btn_area">
-					<%if( isManager || loginUser != null) {%>
+					<%if( isManager || (loginUser != null && !"".equals(loginUser.getUserId()))) {%>
 					<a href="<%=contextPath%>/board/notice_write.jsp?mode=write&amp;<%=paramOption%>">글쓰기</a>
 					<%} %>
 				</div><!-- *board_btn_area -->

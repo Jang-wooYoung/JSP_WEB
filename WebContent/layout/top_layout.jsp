@@ -5,7 +5,8 @@
 <%
 	String contextPath = request.getContextPath();
 
-	UserVO loginUser = (UserVO)session.getAttribute("loginUser");	
+	UserVO loginUser = (UserVO)session.getAttribute("loginUser");
+	if(loginUser == null) loginUser = new UserVO();
 %>
 
 <!DOCTYPE html>
@@ -37,7 +38,7 @@
 				<div class="tool_box">
 					<div class="login">
 						<span>
-							<%if(loginUser == null) {%>
+							<%if(loginUser == null || "".equals(loginUser.getUserId())) {%>
 								<a href="<%=contextPath%>/content/login.jsp">로그인</a>
 							<%}else { %>
 								<a href="<%=contextPath%>/content/signup.jsp?mode=update">마이페이지</a>

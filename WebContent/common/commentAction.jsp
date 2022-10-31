@@ -32,20 +32,23 @@
 	if(request.getParameter("rowCount") != null) rowCount = Integer.valueOf(request.getParameter("rowCount"));
 	if(request.getParameter("page") != null) currentPage = Integer.valueOf(request.getParameter("page"));
 	
-	if("".equals(commentContent) || "".equals(boardUid) || "".equals(dataUid) || "".equals(userId) || "".equals(userName) || "".equals(userNickname)) {
-		%>
-			<script type="text/javascript">
-				alert('비정상적인 경로입니다.');
-				location.href = "<%=contextPath%>/index.jsp";
-			</script>
-		<%
-	}
 	
 	String paramOption = "page="+currentPage+"&rowCount="+rowCount+"&boardUid="+boardUid;
 	
 	CommentService commentService = new CommentService();
 	
 	if("write".equals(mode)) {
+		
+		if("".equals(commentContent) || "".equals(boardUid) || "".equals(dataUid) || "".equals(userId) || "".equals(userName) || "".equals(userNickname)) {
+			%>
+				<script type="text/javascript">
+					alert('비정상적인 경로입니다.');
+					location.href = "<%=contextPath%>/index.jsp";
+				</script>
+			<%
+			return;
+		}		
+		
 		int write_count = 0;
 		String cuid = "";
 		String alert_Msg = "";
@@ -85,7 +88,41 @@
 		
 	}else if("delete".equals(mode)) {
 		
-	}else {
+		if("".equals(commentUid)) {
+			%>
+				<script type="text/javascript">
+					alert('비정상적인 경로입니다.');
+					location.href = "<%=contextPath%>/board/notice_detail.jsp?dataUid=<%=dataUid%>&<%=paramOption%>";
+				</script>
+			<%
+			return;
+		}
+		
+		int delete_count = 0;
+		String alert_Msg = "";
+		
+		CommentVO commentVO = commentService.getComment(commentUid);
+		
+		commentVO.setCommentState(1);
+		
+		delete_count = commentService.CommentDelete(commentVO);
+		
+		if(delete_count > 0) {
+			alert_Msg = "댓글삭제에 성공하였습니다.";
+		}else {
+			alert_Msg = "댓글삭제에 실패하였습니다.";
+		}
+		
+		%>
+			<script type="text/javascript">
+				alert('<%=alert_Msg%>');
+				location.href = "<%=contextPath%>/board/notice_detail.jsp?dataUid=<%=dataUid%>&<%=paramOption%>";
+			</script>
+		<%
+		
+		return;
+		
+	}else {		
 		%>
 			<script type="text/javascript">
 				alert('비정상적인 경로입니다.');

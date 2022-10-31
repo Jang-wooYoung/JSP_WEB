@@ -34,7 +34,7 @@
 		errorFlag = true;
 	}
 	
-	if(errorFlag) {
+	if(errorFlag) {		
 		%>
 			<script type="text/javascript">
 				alert('비정상적인 경로 입니다.');
@@ -145,7 +145,7 @@
 													<%=commentVO.getUserNickname() %><br />
 													<%=sf.format(commentVO.getRegister_dt()) %><br />
 													<%if( isManager || (loginUser != null && dataVO.getUserId().equals(loginUser.getUserId())) || commentVO.getUserId().equals(loginUser.getUserId())) {%>
-													<a href="#">삭제</a>
+													<a href="#" onclick="deleteComment('<%=boardUid%>', '<%=dataVO.getDataUid()%>', '<%=commentVO.getCommentUid()%>');">삭제</a>
 													<%} %>													
 												</td>
 												<td><%=commentVO.getCommentContent() %></td>
@@ -168,6 +168,15 @@
 				function deleteData(boardUid, dataUid) {
 					if(confirm('삭제하시겠습니까?')) {
 						location.href = "<%=contextPath%>/common/deleteData.jsp?mode=delete&boardUid="+boardUid+"&dataUid="+dataUid+"";
+						return true;
+					}else {
+						return false;
+					}
+				}
+				
+				function deleteComment(boardUid, dataUid, commentUid) {
+					if(confirm('삭제하시겠습니까?')) {
+						location.href = "<%=contextPath%>/common/commentAction.jsp?mode=delete&boardUid="+boardUid+"&dataUid="+dataUid+"&commentUid="+commentUid+"";
 						return true;
 					}else {
 						return false;

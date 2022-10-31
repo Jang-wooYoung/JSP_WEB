@@ -34,7 +34,7 @@
 	String paramOption = "page="+currentPage+"&amp;rowCount="+rowCount+"&amp;boardUid="+boardUid;
 	
 	BoardService boardService = new BoardService();
-	FileService fileService = new FileService();
+	FileService fileService = new FileService();	
 	
 	DataVO dataVO = boardService.getData(dataUid);
 	List<FileVO> attachFileList = fileService.getAttachFileLsit(dataUid, 0);

@@ -41,7 +41,11 @@
 		<div id="content">
 			<div class="signup_box">
 				<div class="signup_tb_box">
+					<%if("write".equals(mode)) {%>
 					<h1>회원가입</h1>
+					<%}else if("update".equals(mode)) {%>
+					<h1>회원수정</h1>
+					<%} %>
 					
 					<form method="POST" action="<%=contextPath%>/common/userAction.jsp" onsubmit="return userFormChk(this);">						
 						<input type="hidden" id="mode" name="mode" value="<%=mode%>" />

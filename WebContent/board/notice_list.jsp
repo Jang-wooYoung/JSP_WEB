@@ -4,6 +4,7 @@
 
 <%@page import="board.DataVO"%>
 <%@page import="board.BoardService"%>
+<%@page import="board.CommentService"%>
 
 <%@page import="java.util.List"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -26,6 +27,7 @@
 	String pageOption = "rowCount="+rowCount+"&amp;boardUid="+boardUid;
 	
 	BoardService boardService = new BoardService();
+	CommentService commentService = new CommentService();
 	
 	List<DataVO> noticeList = boardService.getDataList(boardUid, 3, 1, 50); //공지사항
 	List<DataVO> dataList = boardService.getDataList(boardUid, 0, currentPage, rowCount); //일반글
@@ -71,10 +73,13 @@
 							
 							if(noticeList != null && noticeList.size() > 0) {
 								for(DataVO dataVO : noticeList) {
+									int comment_count = 0;
+									comment_count = commentService.getCommentCount(dataVO.getDataUid());
+									
 									%>
 										<tr>
 											<td class="num">공지</td>
-											<td class="title"><a href="<%=contextPath%>/board/notice_detail.jsp?dataUid=<%=dataVO.getDataUid()%>&amp;<%=paramOption%>"><%=dataVO.getDataTitle() %></a></td>
+											<td class="title"><a href="<%=contextPath%>/board/notice_detail.jsp?dataUid=<%=dataVO.getDataUid()%>&amp;<%=paramOption%>"><%=dataVO.getDataTitle() %> <%if(comment_count > 0) {%><font color="red">[<%=comment_count%>]</font><%} %></a></td>
 											<td class="reg"><%=sf.format(dataVO.getRegister_dt()) %></td>
 											<td class="name"><%=dataVO.getUserNickname() %></td>
 											<td class="view"><%=dataVO.getViewCount() %></td>
@@ -88,10 +93,13 @@
 								number = totalCount - (currentPage - 1) * rowCount;								
 								
 								for(DataVO dataVO : dataList) {
+									int comment_count = 0;
+									comment_count = commentService.getCommentCount(dataVO.getDataUid());
+									
 									%>
 										<tr>
 											<td class="num"><%=number %></td>
-											<td class="title"><a href="<%=contextPath%>/board/notice_detail.jsp?dataUid=<%=dataVO.getDataUid()%>&amp;<%=paramOption%>"><%=dataVO.getDataTitle() %></a></td>
+											<td class="title"><a href="<%=contextPath%>/board/notice_detail.jsp?dataUid=<%=dataVO.getDataUid()%>&amp;<%=paramOption%>"><%=dataVO.getDataTitle() %> <%if(comment_count > 0) {%><font color="red">[<%=comment_count%>]</font><%} %></a></td>
 											<td class="reg"><%=sf.format(dataVO.getRegister_dt()) %></td>
 											<td class="name"><%=dataVO.getUserNickname() %></td>
 											<td class="view"><%=dataVO.getViewCount() %></td>

@@ -6,4 +6,4 @@ jdk 버전 1.8.0_171
 
 tomcat 버전 8.5.57
 
-mysql 버전 5.5
+mysql 버전 5.5 (id : roow / pw : jsbweb)
